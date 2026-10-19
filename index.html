@@ -138,11 +138,23 @@ document.getElementById("yes").addEventListener("click",()=>{
   celebrate();
   // Browsers block autoplay until a user gesture; the button below lets them start the music.
 });
-const song=document.getElementById("song");
-document.getElementById("musicToggle").addEventListener("click",async()=>{
-  try{if(song.paused){await song.play();document.getElementById("musicToggle").textContent="Jeda musik ⏸️";}
-  else{song.pause();document.getElementById("musicToggle").textContent="Putar musik 🎵";}}
-  catch(e){alert("Tambahkan file musik bernama pandangan-pertama.mp3 ke folder yang sama dengan index.html. Pastikan kamu punya izin untuk menggunakan file audio tersebut.");}
+const song = document.getElementById("song");
+const musicToggle = document.getElementById("musicToggle");
+
+musicToggle.addEventListener("click", async () => {
+  if (song.paused) {
+    try {
+      song.load();
+      await song.play();
+      musicToggle.textContent = "Jeda musik ⏸️";
+    } catch (e) {
+      console.error("Gagal memutar musik:", e);
+      alert("Musik gagal diputar: " + e.message);
+    }
+  } else {
+    song.pause();
+    musicToggle.textContent = "Putar musik 🎵";
+  }
 });
 </script>
 </body>
