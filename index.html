@@ -15,9 +15,7 @@
   --ink: #773b58;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 html {
   min-height: 100%;
@@ -30,22 +28,16 @@ body {
   margin: 0;
   min-height: 100vh;
   min-height: 100dvh;
-  padding: 20px 0;
+  padding: 12px 0;
   overflow-x: hidden;
   overflow-y: auto;
   font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
   color: var(--ink);
-  background: linear-gradient(
-    135deg,
-    #fff5fa,
-    #ffd6e7 55%,
-    #fff0f6
-  );
+  background: linear-gradient(135deg, #fff5fa, #ffd6e7 55%, #fff0f6);
   -webkit-overflow-scrolling: touch;
 }
 
-#petals,
-.floating {
+#petals, .floating {
   position: fixed;
   inset: 0;
   pointer-events: none;
@@ -59,7 +51,7 @@ body {
   width: calc(100% - 28px);
   max-width: 570px;
   margin: 12px auto;
-  padding: 26px 22px;
+  padding: 24px 20px;
   text-align: center;
   background: #ffffffd9;
   border: 2px solid #fff;
@@ -67,18 +59,12 @@ body {
   box-shadow: 0 20px 70px #d84f8d2b;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  animation: pop .7s ease both;
+  animation: pop .5s ease both;
 }
 
 @keyframes pop {
-  from {
-    opacity: 0;
-    transform: translateY(18px) scale(.96);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
+  from { opacity: 0; transform: translateY(12px) scale(.98); }
+  to { opacity: 1; transform: none; }
 }
 
 h1 {
@@ -89,10 +75,7 @@ h1 {
   overflow-wrap: anywhere;
 }
 
-p {
-  line-height: 1.7;
-  font-size: 1rem;
-}
+p { line-height: 1.7; font-size: 1rem; }
 
 .kicker {
   font-size: .75rem;
@@ -119,11 +102,12 @@ button {
   font-weight: 800;
   border: 0;
   border-radius: 999px;
-  padding: 13px 22px;
+  padding: 12px 20px;
   cursor: pointer;
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
   transition: transform .18s, box-shadow .18s;
+  margin: 4px 2px;
 }
 
 button:focus-visible {
@@ -131,9 +115,7 @@ button:focus-visible {
   outline-offset: 3px;
 }
 
-button:hover {
-  box-shadow: 0 7px 20px #db57942e;
-}
+button:hover { box-shadow: 0 7px 20px #db57942e; }
 
 .yes {
   background: linear-gradient(135deg, #ff8cba, #ef4e93);
@@ -158,12 +140,10 @@ button:hover {
   margin-top: 22px;
 }
 
-.hidden {
-  display: none !important;
-}
+.hidden { display: none !important; }
 
 .note {
-  margin: 22px 0;
+  margin: 20px 0;
   background: #fff8fb;
   border: 1px dashed #efa1c3;
   border-radius: 20px;
@@ -178,14 +158,9 @@ button:hover {
   font-weight: 800;
 }
 
-.small {
-  font-size: .83rem;
-  color: #ad7891;
-}
+.small { font-size: .83rem; color: #ad7891; }
 
-#result h1 {
-  font-size: clamp(1.8rem, 7vw, 2.6rem);
-}
+#result h1 { font-size: clamp(1.8rem, 7vw, 2.6rem); }
 
 .date {
   display: inline-block;
@@ -208,10 +183,7 @@ button:hover {
 }
 
 @keyframes fall {
-  to {
-    transform: translateY(120vh) rotate(720deg);
-    opacity: .15;
-  }
+  to { transform: translateY(120vh) rotate(720deg); opacity: .15; }
 }
 
 .heart {
@@ -222,10 +194,7 @@ button:hover {
 }
 
 @keyframes rise {
-  to {
-    transform: translateY(-115vh) rotate(25deg);
-    opacity: 0;
-  }
+  to { transform: translateY(-115vh) rotate(25deg); opacity: 0; }
 }
 
 .confetti {
@@ -237,83 +206,68 @@ button:hover {
 }
 
 @keyframes burst {
-  from {
-    transform: translateY(0) scale(.5);
-    opacity: 0;
-  }
+  from { transform: translateY(0) scale(.5); opacity: 0; }
   15% { opacity: 1; }
-  to {
-    transform: translateY(-180px) rotate(35deg) scale(1.4);
-    opacity: 0;
-  }
+  to { transform: translateY(-180px) rotate(35deg) scale(1.4); opacity: 0; }
 }
 
 footer {
   font-size: .72rem;
   color: #c18ba4;
-  margin-top: 24px;
+  margin-top: 20px;
 }
 
-/* GOOGLE FORM */
+/* Google Form: tinggi dibuat lebih pendek */
 #heartNote .note {
-  padding: 10px;
-  overflow: visible;
+  padding: 8px;
+  overflow: hidden;
 }
 
 #heartNote iframe {
   display: block;
   width: 100%;
-  height: 1200px;
-  min-height: 1200px;
+  height: 800px;
   max-width: 100%;
   border: 0;
   border-radius: 12px;
   background: white;
 }
 
-/* Tampilan HP */
+.back-row {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+
+.back-button {
+  padding: 9px 15px;
+  font-size: .9rem;
+}
+
 @media (max-width: 480px) {
-  body {
-    padding: 10px 0;
-  }
+  body { padding: 6px 0; }
 
   .scene {
     width: calc(100% - 20px);
-    margin: 10px auto;
-    padding: 22px 15px;
+    margin: 8px auto;
+    padding: 20px 14px;
     border-radius: 22px;
   }
 
-  p {
-    font-size: .96rem;
-  }
-
-  button {
-    padding: 12px 18px;
-  }
-
-  .note {
-    padding: 12px;
-  }
-
-  #heartNote .note {
-    padding: 6px;
-  }
+  p { font-size: .96rem; }
+  button { padding: 12px 17px; }
+  .note { padding: 12px; }
+  #heartNote .note { padding: 5px; }
 
   #heartNote iframe {
-    height: 1400px;
-    min-height: 1400px;
+    height: 750px;
   }
 
-  footer {
-    margin-top: 18px;
-  }
+  footer { margin-top: 16px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     animation-duration: .01ms !important;
     animation-iteration-count: 1 !important;
     transition: none !important;
@@ -339,14 +293,12 @@ footer {
   <div class="flower">💐</div>
   <div class="kicker">a little note from linoo</div>
   <h1>Untuk Fin'an ♡</h1>
-
   <div class="note">
     <p>Haii Fin'an,</p>
     <p>Aku seneng bisa kenal kamu. Entah sejak kapan, kamu jadi salah satu alasan kecil yang bikin hariku terasa lebih menyenangkan.</p>
     <p>Hari ini aku mau jujur aja: aku suka sama kamu. Aku nggak tahu kata-kata paling sempurna buat bilang ini, jadi aku pilih cara sederhana ini buat menyampaikannya. 🥹💗</p>
     <p class="signature">— Linoo</p>
   </div>
-
   <p>Jadi... boleh aku tanya sesuatu? 🌷</p>
   <button class="yes" id="toQuestion">Lihat pertanyaannya 💌</button>
 </main>
@@ -356,12 +308,10 @@ footer {
   <div class="kicker">one important question</div>
   <h1>Mau ga jadi org spesial aku?</h1>
   <p>Fin'an, aku nanya serius nih... tapi tetap santai yaa 🥺</p>
-
   <div class="buttons" id="buttonArea">
     <button class="yes" id="yes">MAUUU 💖</button>
     <button class="no" id="no">GAMAU 🙈</button>
   </div>
-
   <p class="small" id="tease">pilih dengan hati-hati hehe 🤭</p>
 </main>
 
@@ -373,18 +323,19 @@ footer {
   <p>♡ Tanggal jadian kita ♡</p>
   <div class="date" id="dateText">—</div>
   <p class="small">backsound bisa diputar kalau file musik tersedia di folder website 🎶</p>
-
   <button class="no" id="musicToggle">Putar / jeda musik 🎵</button>
   <button class="yes" id="toHeartNote">Tulis isi hatiku 💌</button>
-
   <audio id="song" loop preload="none">
     <source src="pandangan-pertama.mp3" type="audio/mpeg">
   </audio>
-
   <footer>with love, Linoo ♡</footer>
 </main>
 
 <main class="scene hidden" id="heartNote">
+  <div class="back-row">
+    <button class="no back-button" id="backToResult">← Kembali</button>
+  </div>
+
   <div class="flower">💌</div>
   <div class="kicker">a little space for your heart</div>
   <h1>Ruang Cerita Fin'an ♡</h1>
@@ -394,13 +345,12 @@ footer {
     <iframe
       src="https://docs.google.com/forms/d/e/1FAIpQLSc7XfFQYjJLwycppR-UBdJoZUW5eH7HQlrpswcpfs30oS9q-A/viewform?embedded=true"
       title="Formulir Ruang Cerita Fin'an"
-      height="1400"
       loading="lazy">
       Memuat formulir…
     </iframe>
   </div>
 
-  <p class="small">Kalau formulir belum tampil lengkap, tunggu sebentar sampai selesai dimuat. 💗</p>
+  <p class="small">Kalau formulir belum selesai dimuat, tunggu sebentar, yaa. 💗</p>
   <footer>with love, Linoo ♡</footer>
 </main>
 
@@ -411,8 +361,6 @@ function show(id) {
   pages.forEach(page => {
     document.getElementById(page).classList.toggle("hidden", page !== id);
   });
-
-  // Kembalikan halaman ke atas setiap berpindah bagian.
   window.scrollTo({ top: 0, behavior: "auto" });
 }
 
@@ -437,13 +385,13 @@ rain("floating", ["♡", "♥", "💗", "💕", "✨"], 20, "heart", 8, 12);
 document.getElementById("start").addEventListener("click", () => show("letter"));
 document.getElementById("toQuestion").addEventListener("click", () => show("question"));
 document.getElementById("toHeartNote").addEventListener("click", () => show("heartNote"));
+document.getElementById("backToResult").addEventListener("click", () => show("result"));
 
 const no = document.getElementById("no");
 let dodges = 0;
 
 function moveNo() {
   dodges++;
-
   const maxX = Math.max(8, Math.min(180, window.innerWidth / 2 - 95));
   const maxY = 48;
 
@@ -483,14 +431,12 @@ function celebrate() {
 
 document.getElementById("yes").addEventListener("click", () => {
   show("result");
-
   const now = new Date();
   const fmt = new Intl.DateTimeFormat("id-ID", {
     day: "numeric",
     month: "long",
     year: "numeric"
   });
-
   document.getElementById("dateText").textContent = fmt.format(now);
   celebrate();
 });
