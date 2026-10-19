@@ -81,13 +81,38 @@ footer{font-size:.72rem;color:#c18ba4;margin-top:24px}
   <div class="date" id="dateText">—</div>
   <p class="small">backsound bisa diputar kalau file musik tersedia di folder website 🎶</p>
   <button class="no" id="musicToggle">Putar / jeda musik 🎵</button>
+  <button class="yes" id="toHeartNote">Tulis isi hatiku 💌</button>
   <audio id="song" loop preload="none">
     <source src="pandangan-pertama.mp3" type="audio/mpeg">
   </audio>
   <footer>with love, Linoo ♡</footer>
 </main>
-<script>
-const pages=["intro","letter","question","result"];
+
+
+<main class="scene hidden" id="heartNote">
+  <div class="flower">💌</div>
+  <div class="kicker">a little space for your heart</div>
+  <h1>Ruang Cerita Fin'an ♡</h1>
+  <p>Fin'an, kamu boleh cerita apa pun yang ada di hati kamu. Aku ingin memahami kamu, tanpa menghakimi. Tulis senyaman kamu, yaa. 💗</p>
+
+  <div class="note">
+    <iframe
+      src="https://docs.google.com/forms/d/e/1FAIpQLSc7XfFQYjJLwycppR-UBdJoZUW5eH7HQlrpswcpfs30oS9q-A/viewform?embedded=true"
+      width="100%"
+      height="550"
+      frameborder="0"
+      marginheight="0"
+      marginwidth="0"
+      style="border:0; background:white; border-radius:12px;">
+      Memuat…
+    </iframe>
+  </div>
+  <footer>with love, Linoo ♡</footer>
+</main>
+  
+  
+  <script>
+const pages=["intro","letter","question","result","heartNote"];
 function show(id){pages.forEach(p=>document.getElementById(p).classList.toggle("hidden",p!==id));}
 function rain(containerId, symbols, count, cls, durationMin, durationRange){
   const box=document.getElementById(containerId);
@@ -130,6 +155,10 @@ function celebrate(){
     setTimeout(()=>el.remove(),2400);
   }
 }
+    document.getElementById("toHeartNote").addEventListener("click",()=>{
+  show("heartNote");
+});
+    
 document.getElementById("yes").addEventListener("click",()=>{
   show("result");
   const now=new Date();
